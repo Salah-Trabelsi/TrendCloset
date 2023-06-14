@@ -2,7 +2,7 @@
     <v-footer class="pa-5">
         <v-row justify="center" no-gutters>
             <v-col class="text-center pt-11"  cols="12">
-                {{ new Date().getFullYear() }} - <strong>Salah</strong>
+                {{ new Date().getFullYear() }} - <strong>Salah Trabelsi</strong>
                 <br>
                 <div class="logo-footer">
                     <img src="@/assets/Logo.png" alt="Logo">

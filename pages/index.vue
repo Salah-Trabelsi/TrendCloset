@@ -95,7 +95,6 @@
 
         <v-row cols="12">
             <v-col v-for="product in slicedProducts" :key="product.id" cols="12" sm="6" md="4">
-                <!-- New Arrivals Product-->
                 <ProductNewArrivals :product="product" />
             </v-col>
         </v-row>
@@ -131,7 +130,6 @@
         <h2 class="mb-6 font-weight-light text-grey-darken-1 text-uppercase">GERADE ANGESAGT</h2>
         <v-row cols="12">
             <v-col v-for="product in displayedProducts" :key="product.id" cols="12" sm="6" md="4" lg="3">
-                <!--Displayed Product-->
                 <ProductHome :product="product"  />
             </v-col>
         </v-row>
@@ -183,6 +181,9 @@
     import { useCartStore } from '~/store/cart';
 
     const cartStore = useCartStore();
+
+
+
   
    
 </script>
@@ -297,6 +298,14 @@ h1 {
   }
 }
 
+@media screen and (max-width: 1278px) {
+
+    .custom-margin-top {
+
+        margin-top: 1rem !important;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .summer-highlight {
 
@@ -306,7 +315,7 @@ h1 {
 
     .custom-margin-top {
 
-        margin-top: 0 !important;
+        margin-top: 2rem !important;
     }
 }
 @media screen and (max-width: 415px) {

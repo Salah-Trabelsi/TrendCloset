@@ -41,7 +41,7 @@ const cartStore = useCartStore();
 
 const route = useRoute();
 
-// Define the props for the component
+
 const props = defineProps({
   id: {
     type: String,

@@ -7,7 +7,6 @@
                 </div>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-                  <!-- Add burger menu for responsive -->
                 <v-btn icon @click="drawer = !drawer" class="hidden-md-and-up">
                     <v-icon>mdi-menu</v-icon>
                 </v-btn>
@@ -31,7 +30,6 @@
                 @click="cartStore.toggleTheme()">
             </v-btn>
         </v-toolbar>
-        <!-- Add responsive drawer -->
         <v-overlay v-model="drawer" :value="drawer" transition="overlay-transition" class="mt-16" width="50%">
             <v-drawer v-model="drawer" temporary>
                 <v-list>
@@ -58,6 +56,9 @@ const theme = computed(() => cartStore.getTheme)
 
 const getProductTotal = computed(() => cartStore.productTotal)
 
+onMounted(() => {
+    cartStore.loadCartContent();
+});
 
 if (typeof localStorage !== 'undefined') {
     const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));

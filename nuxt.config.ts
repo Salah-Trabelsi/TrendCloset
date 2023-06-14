@@ -22,6 +22,9 @@ export default defineNuxtConfig({
     app: {
 
         head: {
+            link: [
+                { rel: 'icon', href: '/favicon.png' } 
+              ],
             title: 'TrendCloset',
 
             meta: [

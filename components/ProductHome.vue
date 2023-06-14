@@ -5,7 +5,6 @@
         </router-link>
         <h3>{{ product.name }}</h3>
         <div class="d-flex justify-center justify-space-between">
-                <!-- <v-divider  class="divider mt-7" :thickness="1" /> -->
                 <hr class="divider mt-7" color="#E0E0E0" />
             <div>  
                 <v-btn @click="cartStore.add(product.id)" outlined class="text-non elevation-0" icon>

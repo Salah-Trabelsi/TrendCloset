@@ -69,7 +69,7 @@
             <v-card-text>
               <div class="d-flex align-center justify-space-between mb-4">
                 <p class="ma-0">Zwischensumme</p>
-                <p class="text-pink">${{ cartStore.total }}</p>
+                <p class="text-pink">{{ cartStore.total }} €</p>
               </div>
               <div class="d-flex align-center justify-space-between mb-4">
                 <p class="ma-0">Steuer</p>

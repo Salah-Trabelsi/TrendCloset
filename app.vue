@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire" :theme="cartStore.getTheme">
-    <!--Header-->
     <Header />
     <v-main>  
       <router-view />

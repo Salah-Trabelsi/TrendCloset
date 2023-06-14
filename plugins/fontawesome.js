@@ -6,7 +6,7 @@ import { faTwitterSquare, faTwitch, faGithubSquare } from '@fortawesome/free-bra
 
 library.add(faTwitterSquare, faTwitch, faGithubSquare)
 
-// This is important, we are going to let Nuxt worry about the CSS
+
 config.autoAddCss = false
 
 export default defineNuxtPlugin((nuxtApp) => {

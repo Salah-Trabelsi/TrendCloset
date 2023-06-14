@@ -9,7 +9,7 @@ export const useCartStore = defineStore('cart',{
 
         cartContent: {},
         theme: "light",
-        totalProducts: 0, // Renamed from productTotal
+        totalProducts: 0, 
 
     }),
 
@@ -63,10 +63,6 @@ export const useCartStore = defineStore('cart',{
         getCartContent() {
             return this.cartContent
         },
-
-        // productTotal() {
-        //     return this.totalProducts; // Use the renamed state property
-        // },
 
     },
     actions: {
@@ -135,25 +131,28 @@ export const useCartStore = defineStore('cart',{
 
             this.theme = this.theme === "light" ? "dark" : "light";
             this.saveCartContent()
-        }
+        },
+     setProductTotal(total) {
+            this.totalProducts = total;
+        },
+
+        onInit() {
+            this.loadCartContent();
+            if (typeof localStorage !== 'undefined') {
+              const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));
+              if (storedProductTotal !== null) {
+                this.setProductTotal(storedProductTotal);
+              }
+            }
+        },
 
     },
 
     mutations: {
-        setProductTotal(total) {
-          this.totalProducts = total; // Use the renamed state property
-        },
+   
     },
 
-    onInit() {
-        this.loadCartContent();
-        // Update the productTotal value when the store is initialized
-        if (typeof localStorage !== 'undefined') {
-          const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));
-          if (storedProductTotal !== null) {
-            this.setProductTotal(storedProductTotal);
-          }
-        }
-    }
+
+      
       
 })
