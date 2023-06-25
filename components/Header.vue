@@ -56,16 +56,23 @@ const theme = computed(() => cartStore.getTheme)
 
 const getProductTotal = computed(() => cartStore.productTotal)
 
-onMounted(() => {
-    cartStore.loadCartContent();
-});
+// onMounted(() => {
+//     cartStore.loadCartContent();
+// });
 
-if (typeof localStorage !== 'undefined') {
-    const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));
-    if (storedProductTotal !== null) {
-      cartStore.getproductTotal = storedProductTotal;
+onBeforeMount(() => {
+    cartStore.loadCartContent();
+    if (typeof localStorage !== 'undefined') {
+      const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));
+      const storedTheme = localStorage.getItem('theme');
+      if (storedProductTotal !== null) {
+        cartStore.setProductTotal(storedProductTotal);
+      }
+      if (storedTheme) {
+        cartStore.theme = storedTheme;
+      }
     }
-}
+  });
 
 watch(getProductTotal, (newValue) => {
   if (typeof localStorage !== 'undefined') {
@@ -80,6 +87,8 @@ const navigationItems = [
     { label: 'Herren', path: '/Herren' },
 
 ]
+
+
 
 const drawer = ref(false)
 

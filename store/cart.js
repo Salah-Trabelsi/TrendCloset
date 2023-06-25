@@ -14,6 +14,10 @@ export const useCartStore = defineStore('cart',{
     }),
 
     getters: {
+        getTheme() {
+            return this.theme;
+          },
+
 
         formattedCart() {
             return Object.keys(this.cartContent).map((productId) => {
@@ -128,11 +132,14 @@ export const useCartStore = defineStore('cart',{
         },
 
         toggleTheme() {
-
             this.theme = this.theme === "light" ? "dark" : "light";
-            this.saveCartContent()
+            this.saveCartContent();
+            localStorage.setItem('theme', this.theme); 
+           
+
         },
-     setProductTotal(total) {
+        
+        setProductTotal(total) {
             this.totalProducts = total;
         },
 
@@ -140,19 +147,18 @@ export const useCartStore = defineStore('cart',{
             this.loadCartContent();
             if (typeof localStorage !== 'undefined') {
               const storedProductTotal = JSON.parse(localStorage.getItem('productTotal'));
+              const storedTheme = localStorage.getItem('theme')
               if (storedProductTotal !== null) {
                 this.setProductTotal(storedProductTotal);
               }
+              if (storedTheme) {
+                this.theme = storedTheme; 
+                }
             }
         },
 
     },
 
-    mutations: {
-   
-    },
 
-
-      
       
 })
