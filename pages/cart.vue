@@ -69,7 +69,7 @@
             <v-card-text>
               <div class="d-flex align-center justify-space-between mb-4">
                 <p class="ma-0">Zwischensumme</p>
-                <p class="text-pink">{{ cartStore.total }} €</p>
+                <p class="text-pink">{{  parseFloat(cartStore.total).toFixed(2)}} €</p>
               </div>
               <div class="d-flex align-center justify-space-between mb-4">
                 <p class="ma-0">Steuer</p>
@@ -82,7 +82,7 @@
               <v-divider></v-divider>
               <div class="py-3 d-flex align-center justify-space-between mb-4">
                 <p class="ma-0">Bestellsumme</p>
-                <p class="text-pink">${{ cartStore.total }}</p>
+                <p class="text-pink">{{ parseFloat(cartStore.total).toFixed(2) }} €</p>
               </div>
               <v-btn color="#08C5D1" block> Kasse </v-btn>
             </v-card-text>
