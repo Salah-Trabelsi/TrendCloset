@@ -110,11 +110,11 @@ watch(
       localStorage.setItem('cartContent', JSON.stringify(newValue));
     }
   },
-  { deep: true } // Enable deep watching for nested objects
+  { deep: true } 
 );
 
 
-// Watch for changes in cartContent and update localStorage
+
 onUnmounted(() => {
     if(typeof localStorage != 'undefined') {
         localStorage.setItem('cartContent', JSON.stringify(cartStore.cartContent))
