@@ -4,7 +4,7 @@
             <v-row>
                 <v-col cols="12">
                     <v-btn-toggle background-color="primary" dark v-model="selectedCategory" desnse>
-                        <v-btn color="#27C7D4" class="text-subtitle-1" value="All" text rounded="xl" size="large">All</v-btn>
+                        <v-btn color="#27C7D4" class="text-subtitle-1" value="All" text rounded="xl" size="large">Alle</v-btn>
                         <v-btn color="#27C7D4" class="text-subtitle-1" value="Damen" text rounded="xl" size="large">Damen</v-btn>
                         <v-btn color="#27C7D4" class="text-subtitle-1" value="Herren" text rounded="xl" size="large">Herren</v-btn>
                     </v-btn-toggle>

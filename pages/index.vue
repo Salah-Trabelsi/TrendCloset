@@ -182,9 +182,6 @@
 
     const cartStore = useCartStore();
 
-
-
-  
    
 </script>
 

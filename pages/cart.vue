@@ -3,7 +3,6 @@
       <v-row>
         <v-col md="8">
           <v-card class="py-5 px-4">
-            <v-card-title class="mb-5"> My Cart </v-card-title>
             <v-card-text v-if="cartStore.formattedCart.length">
               <div v-for="item in cartStore.formattedCart" :key="item.id" class="mb-3">
                 <v-row>

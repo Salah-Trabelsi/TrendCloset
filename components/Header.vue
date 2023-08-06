@@ -52,13 +52,11 @@
 
 const cartStore = useCartStore();
 
-const theme = computed(() => cartStore.getTheme)
+const theme = computed(() => cartStore.getTheme);
 
-const getProductTotal = computed(() => cartStore.productTotal)
+const getProductTotal = computed(() => cartStore.productTotal);
 
-// onMounted(() => {
-//     cartStore.loadCartContent();
-// });
+
 
 onBeforeMount(() => {
     cartStore.loadCartContent();
