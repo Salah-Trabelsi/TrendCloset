@@ -44,7 +44,7 @@
                         {{ item.quantity }}
                         X {{ item.price }} =
                         <strong>
-                          {{ item.cost }}
+                          {{ parseFloat(item.cost).toFixed(2) }}
                         </strong>
                       </p>
                       <v-btn @click="cartStore.removeProduct(item.id)" icon>
