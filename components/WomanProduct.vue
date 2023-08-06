@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-container>
-            <h1 class="mt-3 mb-4">Frauen</h1>
+            <h1 class="mt-3 mb-4">Damen</h1>
             <v-row cols="12">
                 <v-col  v-for="product in WoamanProduct" :key="product.id" cols="12"  sm="6" md="4" lg="3">
                     <div class="product-card h-50">
